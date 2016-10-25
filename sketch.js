@@ -1,9 +1,17 @@
 var rockone;
 var rocktwo;
 var rockthree;
+var movingRock;
+function preload() {
+
+movingRock = loadImage("img/movingrock.jpg");
+
+}
 
 function setup() {
   createCanvas(640, 460);
+  background(255);
+  image(movingRock);
 
   rockone = new Rocksleeve(50, 2, 50);
 
@@ -13,8 +21,8 @@ function setup() {
 }
 
 function draw() {
-  background(255);
 
+  image(movingRock, random(width), random (height),random(2), random (3));
   ellipse(320,230,400);
 
   rockone.display();
@@ -42,28 +50,28 @@ function Rocksleeve(rockShelves, rockSpeed, rockXPosition) {
   this.fillColor = color(random(255), random(255), random(255));
   var ey = 0;
 //screen time
-  this.display = function() {
+this.display = function() {
 
     fill(this.fillColor);
     ellipse(this.xPosition, ey, this.rockShelves, this.rockShelves);
     ellipse(this.xPosition-1, ey, this.rockShelves-random(3), this.rockShelves);
     ellipse(this.xPosition-2, ey, this.rockShelves-random(2), this.rockShelves);
 
-  };
+};
 //speed
-  this.move = function() {
+this.move = function() {
 
     //++?
     ey = ey + this.speed;
 
-  };
+};
 //confusion
-  this.interact = function() {
+this.interact = function() {
 
     if(mouseX > this.xPosition) {
     ey = 0;
     }
-  };
+};
 
 }
 /*function setup(){
