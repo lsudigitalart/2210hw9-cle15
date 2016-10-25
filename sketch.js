@@ -27,15 +27,15 @@ function draw() {
 
   rockone.display();
   rockone.move();
-  rockone.interact();
+  //rockone.interact();
 
   rocktwo.display();
   rocktwo.move();
-  rocktwo.interact();
+  //rocktwo.interact();
 
   rockthree.display();
   rockthree.move();
-  rockthree.interact();
+  //rockthree.interact();
 
 }
 
@@ -66,7 +66,7 @@ this.move = function() {
 
 };
 //confusion
-this.interact = function() {
+/*this.interact = function() {
 
     if(mouseX > this.xPosition) {
     ey = 0;
